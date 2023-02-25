@@ -13,5 +13,6 @@ module.exports = {
     "!src/server/startServer.ts",
     "!src/loadEnvironment.ts",
     "!src/database/connectDataBase.ts",
+    "!src/server/cors.ts",
   ],
 };

@@ -1,7 +1,7 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const connectDatabase = async(url:string) => {
-  mongoose.set("strictQuery",false);
+const connectDatabase = async (url: string) => {
+  mongoose.set("strictQuery", false);
   mongoose.set("debug", true);
   mongoose.set("toJSON", {
     virtuals: true,
@@ -11,11 +11,11 @@ const connectDatabase = async(url:string) => {
     },
   });
 
-  try{
+  try {
     await mongoose.connect(url);
-  }catch (error) {
+  } catch (error) {
     throw new Error("Error while connecting to data base.");
   }
-}
+};
 
-export default connectDatabase
+export default connectDatabase;

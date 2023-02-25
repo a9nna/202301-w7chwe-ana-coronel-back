@@ -29,7 +29,7 @@ describe("Given a createUser function", () => {
       } as Partial<Response>;
 
       User.create = jest.fn();
-      await createUser(req as Request , res as Response, next);
+      await createUser(req as Request, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(statusCode);
     });

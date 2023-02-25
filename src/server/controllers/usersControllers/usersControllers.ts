@@ -29,3 +29,15 @@ export const createUser = async (
     next(customError)
   }
 }
+
+export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
+  try{
+    const users = await User.find().exec();
+
+    res.status(200).json({users});
+  } catch (error){
+    const customError = new CustomError((error as Error).message, 500, "Couldn't retrieve users");
+
+    next(customError)
+  }
+}

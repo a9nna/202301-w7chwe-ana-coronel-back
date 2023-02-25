@@ -6,4 +6,4 @@ const options: cors.CorsOptions = {
   origin: allowedOrigins,
 };
 
-export default options
+export default options;

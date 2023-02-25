@@ -1,4 +1,4 @@
-import { MongoMemoryServer } from "mongodb-memory-server"
+import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import request from "supertest";
 import multer from "multer";
@@ -26,13 +26,16 @@ afterEach(async () => {
 describe("Given the POST '/users/register' endpoint", () => {
   describe("When it receives a request with username 'Manolo' with an image and user doesn't exists", () => {
     test("Then it responds with status 201 and the user with its image", async () => {
-
       User.create = jest.fn();
 
       await request(app)
         .post("/users/register")
         .set("Content-type", "multipart/form-data")
-        .attach("image", Buffer.from("/Users/anapaulacoronel/Downloads/avatarcito.png"), {filename: "avatarcito.png"})
+        .attach(
+          "image",
+          Buffer.from("/Users/anapaulacoronel/Downloads/avatarcito.png"),
+          { filename: "avatarcito.png" }
+        )
         .field("username", "Manolo")
         .field("email", "loli@lola93.com")
         .field("password", "manolo82lola93")
@@ -52,10 +55,7 @@ describe("Given the POST '/users/register' endpoint", () => {
     test("Then it responds with status 500", async () => {
       User.create = jest.fn();
 
-      await request(app)
-        .post("/users/register")
-        .send(existentUser)
-        .expect(500);
+      await request(app).post("/users/register").send(existentUser).expect(500);
     });
   });
 });

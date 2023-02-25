@@ -16,6 +16,6 @@ module.exports = {
     "!src/server/cors.ts",
   ],
   testEnvironmentVariables: {
-    NODE_ENV: "test"
-  }
+    NODE_ENV: "test",
+  },
 };

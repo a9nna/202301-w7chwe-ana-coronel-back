@@ -1,7 +1,10 @@
 import { Router } from "express";
-import multer from "multer"
-import uniqid from "uniqid"
-import { createUser } from "../../controllers/usersControllers/usersControllers.js";
+import multer from "multer";
+import uniqid from "uniqid";
+import {
+  createUser,
+  getUsers,
+} from "../../controllers/usersControllers/usersControllers.js";
 
 export const usersRouter = Router();
 
@@ -16,7 +19,7 @@ const storage =
           callback(null, uniqid(`${file.fieldname}-`, `-${file.originalname}`));
         },
       });
-const upload = multer({storage, limits: {fileSize: 8000000}})
+const upload = multer({ storage, limits: { fileSize: 8000000 } });
 
-usersRouter.post("/register", upload.single("image"), createUser)
-
+usersRouter.post("/register", upload.single("image"), createUser);
+usersRouter.get("/", getUsers);

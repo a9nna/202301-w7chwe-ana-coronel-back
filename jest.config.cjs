@@ -11,8 +11,11 @@ module.exports = {
     "!src/setupTests.ts",
     "!src/server/index.ts",
     "!src/server/startServer.ts",
-    "!src/loadEnvironment.ts",
-    "!src/database/connectDataBase.ts",
+    "!src/loadEnvironments.ts",
+    "!src/database/connectDatabase.ts",
     "!src/server/cors.ts",
   ],
+  testEnvironmentVariables: {
+    NODE_ENV: "test"
+  }
 };

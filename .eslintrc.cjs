@@ -14,6 +14,8 @@ module.exports = {
           "error",
           "interface",
         ],
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
       },
     },
     {
@@ -27,5 +29,6 @@ module.exports = {
   },
   rules: {
     "no-implicit-coercion": [2, { number: false }],
+    "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
   },
 };

@@ -1,7 +1,6 @@
 {
   "name": "202301-w6ch2-ana-coronel",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,9 +8,9 @@
     "build:dev": "npx tsc -w",
     "start": "node dist",
     "start:dev": "node --watch dist",
-    "test": "npx jest --passWithNoTests",
-    "test:dev": "npx jest --watchAll --passWithNoTests",
-    "test:coverage": "npx jest --coverage --passWithNoTests",
+    "test": "npx jest",
+    "test:dev": "npx jest --watchAll",
+    "test:coverage": "npx jest --coverage",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -33,19 +32,37 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.13",
     "@types/debug": "^4.1.7",
     "@types/express": "^4.17.17",
     "@types/inquirer": "^9.0.3",
     "@types/morgan": "^1.9.4",
+    "@types/multer": "^1.4.7",
     "@types/node": "^18.13.0",
+    "@types/supertest": "^2.0.12",
+    "@types/uniqid": "^5.3.2",
+    "bcryptjs": "^2.4.3",
     "chalk": "^5.2.0",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "lint-staged": "^13.1.2",
+    "mongodb-memory-server": "^8.11.5",
     "mongoose": "^6.10.0",
-    "morgan": "^1.10.0"
-  }
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "supertest": "^6.3.3",
+    "uniqid": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a9nna/202301-w7chwe-ana-coronel-back.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a9nna/202301-w7chwe-ana-coronel-back/issues"
+  },
+  "homepage": "https://github.com/a9nna/202301-w7chwe-ana-coronel-back#readme",
+  "description": ""
 }

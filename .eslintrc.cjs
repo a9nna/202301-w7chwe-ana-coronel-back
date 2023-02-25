@@ -27,5 +27,6 @@ module.exports = {
   },
   rules: {
     "no-implicit-coercion": [2, { number: false }],
+    "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
   },
 };

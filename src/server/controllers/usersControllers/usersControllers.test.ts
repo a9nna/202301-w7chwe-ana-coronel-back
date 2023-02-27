@@ -80,8 +80,8 @@ describe("Given a getUsers function", () => {
       username: "",
       password: "",
       email: "",
-      enemies: {},
-      friends: {},
+      enemies: [],
+      friends: [],
     };
 
     test("Then it should call the response status method with 200", async() => {

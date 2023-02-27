@@ -1,7 +1,6 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import request from "supertest";
-import multer from "multer";
 import app from "../../index.js";
 import connectDatabase from "../../../database/connectDatabase";
 import User from "../../../database/models/User";

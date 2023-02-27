@@ -19,7 +19,8 @@ const storage =
           callback(null, uniqid(`${file.fieldname}-`, `-${file.originalname}`));
         },
       });
-const upload = multer({ storage, limits: { fileSize: 8000000 }, dest: "src/uploads/" });
+      
+const upload = multer({ storage, limits: { fileSize: 8000000 }});
 
 usersRouter.post("/register", upload.single("image"), createUser);
 usersRouter.get("/", getUsers);

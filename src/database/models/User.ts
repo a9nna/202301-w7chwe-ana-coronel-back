@@ -17,8 +17,16 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
-  enemies: Object,
-  friends: Object,
+  enemies: [
+    {user:{ type: Schema.Types.ObjectId, ref: 'User'}}
+  ],
+  friends: [
+    {user:{ type: Schema.Types.ObjectId, ref: 'User'}}
+  ],
+  backupImage: {
+    type: String,
+    required: true
+  }
 });
 
 const User = model("User", userSchema, "users");

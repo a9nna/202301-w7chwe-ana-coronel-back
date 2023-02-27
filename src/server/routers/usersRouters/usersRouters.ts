@@ -1,6 +1,7 @@
 import { Router } from "express";
 import multer from "multer";
-import uniqid from "uniqid";
+import crypto from "crypto"
+import path from "path";
 import {
   createUser,
   getUsers,
@@ -16,10 +17,15 @@ const storage =
           callback(null, "src/uploads/");
         },
         filename(req, file, callback) {
-          callback(null, uniqid(`${file.fieldname}-`, `-${file.originalname}`));
+          const unicReference = crypto.randomUUID();
+          const extension = path.extname(file.originalname);
+          const basename = path.basename(file.originalname, extension);
+          const filename = `${basename}-${unicReference}${extension}`
+          callback(null, filename);
         },
       });
-const upload = multer({ storage, limits: { fileSize: 8000000 }, dest: "src/uploads/" });
+      
+const upload = multer({ storage, limits: { fileSize: 8000000 }});
 
 usersRouter.post("/register", upload.single("image"), createUser);
 usersRouter.get("/", getUsers);

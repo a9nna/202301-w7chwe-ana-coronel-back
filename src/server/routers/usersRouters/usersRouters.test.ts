@@ -1,7 +1,6 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import request from "supertest";
-import multer from "multer";
 import app from "../../index.js";
 import connectDatabase from "../../../database/connectDatabase";
 import User from "../../../database/models/User";
@@ -26,7 +25,7 @@ afterEach(async () => {
 describe("Given the POST '/users/register' endpoint", () => {
   describe("When it receives a request with username 'Manolo' with an image and user doesn't exists", () => {
     test("Then it responds with status 201 and the user with its image", async () => {
-      User.create = jest.fn();
+      
 
       await request(app)
         .post("/users/register")

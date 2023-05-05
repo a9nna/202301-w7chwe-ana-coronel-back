@@ -22,7 +22,11 @@ const userSchema = new Schema({
   ],
   friends: [
     {user:{ type: Schema.Types.ObjectId, ref: 'User'}}
-  ]
+  ],
+  backupImage: {
+    type: String,
+    required: true
+  }
 });
 
 const User = model("User", userSchema, "users");
